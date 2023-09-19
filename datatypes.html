@@ -1,0 +1,85 @@
+<!DOCKTYPE html>
+<html lang="nl">
+	<head> 
+		<meta charset="utf-8">
+		<title>datatypes</title>
+	</head>
+	<body>
+		<script>
+			var naam = "carl";
+			var adres =  "Kruislaan 111";
+			document.write(
+			"<br> Opgave 10: Datatype van naam is: "+
+			typeof naam);
+			
+			var leerplichtig = true;
+			var volwassen = false;
+			document.write(
+			"<br>Opgave 11: Datatype van leerplicht is: " +
+			typeof leerplichtig);
+			
+			var temperatuur = -10;
+			document.write(
+			"<br>Opgave 12: Datatype van temperatuur is: " +
+			typeof temperatuur);
+			
+			var btw = 0.21 * 100;
+			document.write(
+			"<br>Opgave 13: Waarde van btw is: " + btw);
+			
+			var string = "33445";
+			var resultaat = parseInt(string);
+			document.write(
+			"<br>Opgave 14: parseInt(string) Resultaat is: " + 
+			typeof resultaat);
+		
+			
+			var string = "33445";
+			var resultaat = parseFloat(string);
+			document.write(
+			"<br>Opgave 15: parseFloat(string) Resultaat is: " + 
+			typeof resultaat);
+			
+			var float = 3.3445;
+			var resultaat = parseFloat(float);
+			document.write(
+			"<br>Opgave 16: parseFloat(float) Resultaat is: " + 
+			typeof resultaat);
+			
+			var float = 3.3445;
+			var resultaat = float.toString();
+			document.write(
+			"<br>Opgave 17: float.toString() Resultaat is: " + 
+			typeof resultaat);
+			
+			var float = 3.3445;
+			var resultaat = float.toFixed(2);
+			document.write(
+			"<br>Opgave 18: float.toFixed(2) Resultaat is: " + 
+			typeof resultaat);
+			
+			var twee; // variabele twee ongedeinieerd.
+			document.write(
+			"<br>Opgave 19: Datatype var twee is: "+
+			typeof twee);
+		
+			var een= 1;
+			var drie = een *twee; // var twee nog niet aangemaakt.
+			document.write(
+			"<br>Opgave 20: De waarde van drie is: " + drie);
+		</script>
+	</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Lab 15</title>
+</head>
+<body>
+
+<script>
+
+    doc = 'Dit document is een lang document maar ook een simpel document';
+
+    function vervangen(doc, zoek, vervang) {
+
+        while (doc.indexOf(zoek) != -1){
+            var deel1 = doc.substr(0, doc.indexOf(zoek)) + vervang;
+            var deel2 = doc.substring(doc.indexOf(zoek)+ zoek.length, doc.length);
+            doc = deel1 + deel2;
+        }
+        document.write(doc);
+    }
+</script>
+
+<form name="form">
+    <input type="text" name="zoek">
+    <input type="text" name="vervang">
+    <input type="button" name="button" value="Vervang"
+           onclick="vervangen(doc, document.form.zoek.value, document.form.vervang.value)">
+</form>
+
+<script>
+    document.write('<br>' + doc);
+</script>
+
+</body>
+</html>

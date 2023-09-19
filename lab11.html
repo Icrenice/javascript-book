@@ -1,0 +1,39 @@
+<!DOCKTYPE html>
+<html lang="nl">
+	<head> 
+		<meta charset="utf-8">
+		<title>lab11</title>
+		<!-- dit script: werkt met de for-lus-->
+		
+	</head>
+	<body>
+	<script>	
+	
+		var getal = new Array();
+		getal[0] = 'nul';
+		getal[1] = 'een';
+		getal[2] = 'twee';
+		getal[3] = 'drie';
+		getal[4] = 'vier';
+		getal[5] = 'vijf';
+		getal[6] = 'zes';
+		getal[7] = 'zeven';
+		getal[8] = 'acht';
+		getal[9] = 'negen';
+	
+	telefoonnummer = '';
+        telefoon = prompt('Wat is uw telefoonnummer?');
+        lengte = telefoon.length;
+        for(x=0; x<lengte; x++)
+        {
+            teken = telefoon.charAt(x);
+            document.write(teken);
+            telefoonnummer = telefoonnummer + getal[teken] + ' ';
+        }
+		
+        document.write("<br />Uw telefoonnummer in alfabet is: " + telefoonnummer);
+
+	
+	</script>
+	</body>
+	</html>

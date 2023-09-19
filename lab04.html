@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="nl"> 
+<head>
+<!--gemaakt door Julian playlist-->
+<meta charset="utf-8">
+<meta name="robot" content="all">
+<meta name="language" content="dutch">
+<meta name="autor" content="Julian Bos">
+<meta name="copyright" content="copyright">
+<link rel="stylesheet" href="styles/#" type="text/css"> 
+
+</head>
+	<body>
+		<script>
+			var palet = new Array();
+		
+			
+			palet[0] = "wit";
+			palet[1] = "blauw";
+			palet[2] = "groen";
+			palet[3] = "rood";
+			palet[4] = "zwart";
+			
+			var nieuwekleur = prompt('type nieuwe kleur in voor de een na laatste:');
+			palet[5] = nieuwekleur;
+			document.write("<br>" + palet);	
+			document.write("<br>" + palet);
+			var nieuwekleur2 = prompt('type nieuwe kleur in voor het begin:');
+			document.write('<br> ' + palet);
+			palet.unshift(nieuwekleur2);	
+			document.write("<br>" + palet);
+			palet.sort();
+			document.write("<br>" + palet);
+			var palet2 = palet.splice(0,4)
+			document.write("<br>" + palet2);
+			document.write("<br>" + palet);
+			
+		
+		
+		</script>
+	</body>
+</html>

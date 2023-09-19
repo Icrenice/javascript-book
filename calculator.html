@@ -1,0 +1,139 @@
+<!DOCKTYPE html>
+<html lang="nl">
+    <head>
+        <meta charet="UTF-8">
+    <style>
+        #calculator {
+            border: solid black 1px;
+            padding: 4px;
+            border-radius: 4px;
+            width: 40%;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        form{
+            width: 100%;
+        }
+        #calculator input[type="text"]{
+            text-align: right;
+        }
+        #output {
+            background-color: darkseagreen;
+            width: 92%;
+            margin-left-5px;
+            font-size: 1.3rem;
+            border-radius: 8px;
+            padding-right: 8px;
+        }
+        #buttontable {
+            width: 100%;
+            font-size: 1.0rem;
+        }
+        #buttontable input {
+            width: 100%;
+            height: 32px;
+            padding: 0px;
+        }    
+    </style>
+    </head>
+    <body>
+        <div id="calculator">
+            <form action="index.html" method="post" name="calc">
+                <input type="text" name="output" id="output" value="0">
+                <table id="buttontable">
+                    <tr>
+                        <td>
+                        <input type="button" value="C" onclick="calculator.reset();">
+                        </td>
+                        <td>
+                            <input type="button" value="BS" diabled>
+                        </td>
+                        <td>
+                            <input type="button" value="MR" disabled>
+                        </td>
+                        <td>
+                            <input type="button" value="MC" disabled>
+                        </td>
+                        </tr>
+                    <tr>
+                        <td>
+                                <input type="button" value="1"
+                                onclick="calculator.setOperand ('1');">
+                        </td>
+                        <td>
+                                <input type="button" value="2"
+                                onclick="calculator.setOperand ('2');">
+                        </td>
+                        <td>
+                                <input type="button" value="3"
+                                onclick="calculator.setOperand ('3');">
+                        </td>
+                        <td>
+                                <input type="button" value="+"
+                                onclick="calculator.setOperand ('+');">
+                         </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input type="button" value="4"
+                            onclick="calculator.setOperand ('4');">
+                        </td>
+                        <td>
+                            <input type="button" value="5"
+                            onclick="calculator.setOperand ('5');">
+                       </td>
+                        <td>
+                            <input type="button" value="6"
+                            onclick="calculator.setOperand ('6');">
+                        </td>
+                        <td>
+                                <input type="button" value="-"
+                                onclick="calculator.setOperand ('-');">
+                         </td>
+                    </tr>
+                    <tr>                      
+                        <td>
+                            <input type="button" value="7"
+                            onclick="calculator.setOperand ('7');">
+                        </td>
+                        <td>
+                            <input type="button" value="8"
+                            onclick="calculator.setOperand ('8');">
+                        </td>
+                        <td>
+                                <input type="button" value="9"
+                                onclick="calculator.setOperand ('9');">
+                        </td>
+                        <td>
+                                <input type="button" value="*"
+                                onclick="calculator.setOperand ('*');">
+                         </td>
+                    </tr>
+                    <tr>
+                            <td>
+                                    <input type="button" value="0"
+                                    onclick="calculator.setOperand ('0');">
+                            </td>
+                            <td>
+                                    <input type="button" value="."
+                                    onclick="calculator.setOperand ('.');">
+                            </td>
+                            <td>
+                                    <input type="button" value="="
+                                    onclick="calculator.setOperand ('=');">
+                            </td>
+                            <td>
+                                    <input type="button" value="/"
+                                    onclick="calculator.setOperand ('/');">
+                            </td>
+                    </tr>
+                   
+                  
+                </table>
+            </form>
+        </div>
+
+
+
+
+    </body>

@@ -1,0 +1,99 @@
+<!DOCKTYPE html>
+<html lang="nl">
+<head>
+	<meta charset="UTF-8">
+	<title> manage cart</title>
+	<script>
+	function maakCookie(naam, waarde, dagen) {
+		if(dagen){
+			var datum= new Date();
+			datum.setTime(datum.getTime() + (dagen*24*60*60*1000));
+			var verloopdatum= '; expires= ' + datum.toGMTString();
+			}else{
+				var verloopdatum='';
+			}
+			document.cookie = naam + '='+waarde+verloopdatum + ';path=/';
+			}		
+		
+	function leesCookie(naam){ 
+			var naamCookie = naam + '=';
+			var cookieArray = document.cookie.split(';');
+			for(var i=0; i< cookieArray.length; i++){
+				var dezeCookie = cookieArray[i];
+				dezeCookie = dezeCookie.trim();
+				if (dezeCookie.indexOf(naamCookie) == 0){
+					return dezeCookie.substring(naamCookie.length,dezeCookie.length);
+				}
+			}
+		return null;
+	}	
+		
+	 </script>
+	<script src ="../javascript/shoppingcart.js"></script>
+	<style>
+	table{ 
+		width: 70%;
+		border-style: solid;
+	}
+		th{
+			background-color: #cccccc;
+		}
+		td{
+			width: 25%;
+			font-weight; bold;
+			text-align: center;
+		}
+			input{
+			background-color: bisque;
+			}
+	</style>
+	</head>
+	<body>
+		<p>Overzicht van Uw shoppingcart:</p>
+		<form action="mailto: webshop@xxlcomputers.nl"
+			enctype="text/plain"
+			onsubmit="return checkForm(this);"
+				method="post">
+			<table><tr>
+				<th> ID </th>
+				<th> Merk</th>
+				<th> Model</th>
+				<th> Prijs</th>
+				<th> Aantal</th>
+				<th> geheugen</th>
+				<th> bedrag</th>
+				
+			</tr>
+			<script>
+				cartWeergeven();
+			</script>
+			</table>
+		<br></br>
+		</form>
+		
+		<input required type="text" id="Klantnaam"
+		name="klantnaam" placeholder="Klant naam"><br>
+		<input required type="text" id="Achternaam"
+		name="Achternaam" placeholder="Achternaam"><br>
+		<input required type="text" id="Straat"
+		name="Straat" placeholder="Straat"><br>
+		<input required type="text" id="Nummer"
+		name="Nummer" placeholder="Nummer"><br>
+		<input required type="text" id="Postcode"
+		name="Postcode" placeholder="Postcode"><br>
+		<input required type="text" id="Plaats"
+		name="Plaats" placeholder="Plaats"><br>
+		<input required type="text" id="e-mail"
+		name="e-mail" placeholder="E-mail"><br>
+		<br>
+		<a href="xxlcomputers.html"> << Terug</a>
+		<br>
+		<a onclick="verwijderAlleCookies()" href="managecart.html"> Leeg maken </a>
+		
+		<br>
+		<form action="#">
+			<input type="submit" value="Checkout" />
+		</form>
+		</body>
+		</html>
+		

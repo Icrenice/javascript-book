@@ -1,0 +1,123 @@
+<html lang="nl">
+<head>
+<meta charset="UTF-8">
+<meta name="robots" content="all">
+<meta name="language" content="Dutch">
+<meta name="author" content="Julian">
+<meta name="description" content="">
+<meta name="keywords" content="">
+<meta name="copyright" content="copyright">
+<title>xxlcomputers</title>
+		<script>
+		function maakCookie(naam, waarde, dagen) {
+		if(dagen){
+			var datum= new Date();
+			datum.setTime(datum.getTime() + (dagen*24*60*60*1000));
+			var verloopdatum= '; expires= ' + datum.toGMTString();
+			}else{
+				var verloopdatum='';
+			}
+			document.cookie = naam + '='+waarde+verloopdatum + ';path=/';
+			}		
+		
+		function leesCookie(naam){ 
+			var naamCookie = naam + '=';
+			var cookieArray = document.coockie.split(';');
+			for(var i=0; i< cookieArray.length; i++){
+				var dezeCookie = cookieArray[i];
+				dezeCookie = dezeCookie.trim();
+				if (dezeCookie.indexOf(naamCookie) == 0){
+					return dezeCookie.substring(naamCookie.length,dezeCookie.length);
+				}
+			}
+		return null;
+	}	
+		
+	</script>
+	<script src = "../javascript/shoppingcart.js"></script>
+	</head>
+		<body>
+		<img src="images/toshiba.jpg" style="height: 40%;" alt="">
+		<p>Toshiba Satellite A100 Prijs 999.99</p>
+		<form name="orderform"
+			action="managecart.html"
+			method="get"
+			onsubmit="bestellen(this);">
+		Aantal:
+		<input type="text" size=2 id="aantal" value="1">
+		<input type="image" src="images/cart.png" style="height: 15%";>
+		<input type="hidden" id="id" value=1>                                                                                                                                                                                                               
+		<input type="hidden" id="merk" value="Toshiba">
+		<input type="hidden" id="model" value="Satellite">
+		<input type="hidden" id="prijs" value="999.99">
+		<input type="hidden" id="geheugen" value="4 GB">
+		
+	</form>
+	<br>
+	<hr>
+	<img src="images/lenovo.png" style="height: 40%;"alt="">
+	<p>LENOVO IdeaPad 530S-15IKB Grijs 799.00</p>
+	<form name="orderform"
+		action="managecart.html"
+		method="get"
+	onsubmit="bestellen(this);">
+	Aantal:
+		<input type="text" size=2 id="aantal" value="1">
+		<input type="image" src="images/cart.png" style="height: 15%";>
+		<input type="hidden" id="id" value=2>
+		<input type="hidden" id="merk" value="Lenovo">
+		<input type="hidden" id="model" value="ideaPad">
+		<input type="hidden" id="prijs" value="799.00">
+		<input type="hidden" id="geheugen" value="4 GB">
+	</form>
+	
+	<img src="images/msi.jpg" style="height: 40%;"alt="">
+	<p>GAMING LAPTOP GV Full HD gaming laptop 999.00</p>
+	<form name="orderform"
+		action="managecart.html"
+		method="get"
+	onsubmit="bestellen(this);">
+	Aantal:
+		<input type="text" size=2 id="aantal" value="1">
+		<input type="image" src="images/cart.png" style="height: 15%";>
+		<input type="hidden" id="id" value=3>
+		<input type="hidden" id="merk" value="MSI">
+		<input type="hidden" id="model" value="GV Full HD">
+		<input type="hidden" id="prijs" value="999.00">
+		<input type="hidden" id="geheugen" value="4 GB">
+	</form>
+	<br>
+	<img src="images/razor.jpg" style="height: 40%;" alt="">
+	<p>Razer Blade Pro RZ09-01663F53-R3F1 4999.00</p>
+	<form name="orderform"
+		action="managecart.html"
+		method="get"
+	onsubmit="bestellen(this);">
+	Aantal:
+		<input type="text" size=2 id="aantal" value="1">
+		<input type="image" src="images/cart.png" style="height: 15%";>
+		<input type="hidden" id="id" value=4>
+		<input type="hidden" id="merk" value="Razor">
+		<input type="hidden" id="model" value="Bladepro">
+		<input type="hidden" id="prijs" value="4999.00">
+		<input type="hidden" id="geheugen" value="8 GB">
+	</form>
+	<br>
+	<img src="images/imac.jpg" style="height: 40%;"alt="">
+	<p>MacBook Pro (MR9U2N/A) zilver 13.3 inch 1849.00 </p>
+	<form name="orderform"
+		action="managecart.html"
+		method="get"
+	onsubmit="bestellen(this);">
+	Aantal:
+		<input type="text" size=2 id="aantal" value="1">
+		<input type="image" src="images/cart.png" style="height: 15;">
+		<input type="hidden" id="id" value=5>
+		<input type="hidden" id="merk" value="Apple">
+		<input type="hidden" id="model" value="Imac">
+		<input type="hidden" id="prijs" value="1849.00">
+		<input type="hidden" id="geheugen" value="4 GB">
+	</form>
+	<br>	
+ </body>
+</html>

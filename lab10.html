@@ -1,0 +1,67 @@
+<!DOCKTYPE html>
+<html lang="nl">
+	<head> 
+		<meta charset="utf-8">
+		<title>lab10</title>
+	</head>
+	<body>
+	
+	
+	<form name='form'>
+			<input id="input" type="text" name="bedrag" placeholder="bedrag">
+			<select id="type" name="select">
+				<option value="dollar/euro">dollar/euro</option>
+				<option value="euro/dollar">euro/dollar</option>
+				<option value="ruble/euro">ruble/euro</option>
+				<option value="euro/ruble">euro/ruble</option>
+			</select>
+
+			<input type="button" value="converteren"
+				onclick="document.write('conversie in euro\'s:'+
+				dollar_naar_euro(document.form.bedrag.value, document.form.select.value))">
+		</form>
+			
+		<script>
+		function dollareuro(){
+				return(1.36);
+			}
+		function eurodollar(){
+				return(0.74);
+			}
+			function rubleeuro(){
+				return(48.40);
+			}
+			function euroruble(){
+				return(0.02);
+			}
+			function euro_naar_dollarKoers(dollars){
+				return(euroKoers * dollars());
+			}
+			
+			function dollar_naar_euro(euro, koers){
+			
+	
+				if (koers == "dollar/euro") {
+					return (euro * dollareuro())
+			}	
+				if (koers == "euro/dollar"){
+					return (euro * eurodollar())
+				
+			}
+				if(koers == "ruble/euro"){
+					return (euro * rubleeuro())
+				}
+				if(koers == "euro/ruble"){
+					return (euro * euroruble())
+				}
+				
+			}
+			
+	
+		
+		
+		
+		
+		</script>
+	</body>
+</html>

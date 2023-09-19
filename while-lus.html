@@ -1,0 +1,42 @@
+<!DOCKTYPE html>
+<html lang="nl">
+	<head> 
+		<meta charset="utf-8">
+		<title>for-in-lus</title>
+		<!-- dit script: werkt met de while-lus-->
+		
+	</head>
+		<body>
+			<script>
+			var vandaag = new Date();
+			var uur = vandaag.getHours();
+			var minuten = vandaag.getMinutes();
+			var seconden = vandaag.getSeconds();
+			var Milliseconden = vandaag.getMilliseconds();
+			var lus = Milliseconden;
+			var finish = lus +3;
+			document.write('<br>While-lus begin om: ' +
+			uur + ':' + minuten + ':' + seconden+ ':' + Milliseconden);
+			while(lus < finish){
+				lus = new Date().getMilliseconds();
+				document.write('<br>deze lus om: ' + lus);
+				
+				if(lus == Milliseconden +1) {
+				continue;
+			}				
+				if(lus == Milliseconden +2) {
+				document.write('<br>while-lus voortijdig beindigd');
+				break;
+			}
+			}
+			
+			document.write('<br>while lus eindigt om : '+ 
+			uur +  ':' + minuten + ':' + seconden + ':' + lus);
+			 
+			
+			
+			
+			
+			</script>
+		</body>
+	</html>

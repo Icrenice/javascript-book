@@ -1,0 +1,11 @@
+<script>
+    var topFunction = function(){
+        tekst = "deel een";
+        console.log(tekst);
+        return function (inputTekst){
+        console.log(tekst + " plus " + inputTekst);
+
+    };
+    }();
+    topFunction ("deel twee");  
+</script>

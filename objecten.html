@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<html lang="nl"> 
+<head>
+<!--gemaakt door Julian playlist-->
+<meta charset="utf-8">
+<meta name="robot" content="all">
+<meta name="language" content="dutch">
+<meta name="autor" content="Julian Bos">
+<meta name="copyright" content="copyright">
+<link rel="stylesheet" href="styles/#" type="text/css"> 
+
+</head>
+	<body>
+		<script>
+		var laptops = [];
+		var mac = 'macbook'in laptops;
+		var asus = 'asusbook' in laptops;
+		var dell = 'dellbook' in laptops;
+		
+		laptops['macbook'] =
+		{'model':'air','voorraad': 2000,'prijs': 1090};
+		laptops[ 'asusbook'] = 
+		{'model':'wind','voorraad': 1000, 'prijs': 990};
+		laptops['dellbook'] = 
+		{'model':'fire','voorraad': 987,'prijs': 890};
+		
+		
+		document.write('<br>Opgave 42: Laptop array aangemaakt');
+		document.write('<br>Opgave 43: laptops array uitgebreid');
+		document.write('<br>Opgave 44: De laptops array heeft '+ laptops.length + ' element');//
+		
+		document.write('<br>Opgave 45: De variabele mac is: ' + mac);
+		document.write('<br>mac specificaties ------ ' + '<br>Model: ' + laptops['macbook']['model'] +
+		'<br>voorraad: ' + laptops['macbook']['voorraad'] + '<br>prijs: ' + laptops['macbook']['prijs']);
+		
+		</script>	
+	</body>
+</html>

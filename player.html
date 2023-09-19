@@ -1,0 +1,85 @@
+<!DOCKTYPE html>
+<html lang="nl">
+    <head>
+        <meta charset="UTF-8">
+        <style>
+            #container{
+                margin-left: auto;
+                margin-right: auto;
+                width: 80%;
+            }
+            #controls{
+                display: block;
+                background: black;
+                padding-top:  5px;
+                text-align: center;
+                width: 80%;
+            }
+            input[type = image]{
+                width: 10%;
+            }        
+        </style>
+    </head>
+    <body>
+        <div id="container">
+            <video id="video" controls width="80%" preload
+                poster="Queen_-_Bohemian_Rhapsody.bpm">
+                <source src="video/Queen_-_Bohemian_Rhapsody.mp4" type="video/mp4">
+            </video>
+            <div id="controls">
+                <input type="image" src="images/play-button.png"
+                onclick="player.play(video);">
+                <input type="image" src="images/pause_button.jpg"
+                onclick="player.pause(video);">
+                <input type="image" src="images/reset_button.jpg"
+                onclick="player.reset(video);">              
+                <input type="image" src="images/rewind_button.png."
+                onclick="player.rewind(video);">
+                <input type="image" src="images/forward_button.png."
+                onclick="player.forward(video);">
+                <input type="image" src="images/volume_plus_button.png"
+                onclick="player.volume1(video);">
+                <input type="image" src="images/volume_min_button.png"
+                onclick="player.volume2(video);">
+                <input type="image" src="images/volume_uit_button.png"
+                onclick="player.volume3(video);">
+
+            </div>       
+        </div>
+        <script>
+            var player = function() {};
+            player.prototype.play = function(media) {
+                media.play();
+            }
+            player.prototype.pause = function(media) {
+                media.pause();
+            }
+               
+            player.prototype.reset= function(media) {
+                media.currentTime = 0;
+            }
+            player.prototype.forward = function(media) {
+                media.currentTime += 10;
+            }
+            player.prototype.rewind = function(media) {
+                media.currentTime -= 10;
+            }
+            player.prototype.volume1 = function(media) {
+                media.volume += 0.1;
+            }
+            player.prototype.volume2 = function(media) {
+                media.volume -= 0.1;
+            }
+            player.prototype.volume3 = function(media) {
+                media.muted = true/false;
+            }
+            var player = new player();
+            
+           
+            
+         
+        </script>
+
+
+    </body>
+</html>

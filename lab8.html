@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="nl"> 
+<head>
+<!--gemaakt door Julian -->
+<meta charset="utf-8">
+<meta name="robot" content="all">
+<meta name="language" content="dutch">
+<meta name="autor" content="Julian Bos">
+<meta name="copyright" content="copyright">
+<link rel="stylesheet" href="styles/#" type="text/css"> 
+</head>
+	<body>
+		<h3>lab 08</h3>
+		<h3></h3>
+		<script>
+		
+					
+			var factuurdatum = new Date(prompt("wat is de factuur datum?"));	
+			
+			var vandaag = new Date();
+				mm = vandaag.getMonth()+1;
+				dd = vandaag.getDate();
+				jjjj = vandaag.getFullYear();
+			
+			document.write("<br>De datum van vandaag: "+ vandaag);	
+			document.write("<br>Factuurdatum:" + factuurdatum);
+					
+				var dag = 86400000;
+				betaaldatum = factuurdatum.getTime() + (dag * 30);
+				betaaldatum = new Date(betaaldatum);
+				mm = betaaldatum.getMonth()+1;
+				dd = betaaldatum.getDate();
+				jjjj = betaaldatum.getFullYear();
+				
+				var verschil = betaaldatum - vandaag;
+	
+			document.write("<br>betaaldatum" + betaaldatum );
+	
+		
+		
+			var timeDiff = Math.abs(factuurdatum.getTime() - vandaag.getTime());
+			var diffDays = Math.ceil(timeDiff / (1000 * 3600 * 24)); 
+			if (vandaag.getDay() == factuurdatum.getDay() && vandaag.getMonth() == factuurdatum.getMonth() && vandaag.getFullYear() == factuurdatum.getFullYear()) diffDays = 0;
+			document.write("<br>Aantal dagen voor betalen: "+diffDays);
+			if (diffDays == 0) {
+			alert("meld incassobureau"); 
+			
+			}
+		
+		</script>
+	</body>
+</html>

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="nl"> 
+<head>
+<!--gemaakt door Julian -->
+<meta charset="utf-8">
+<meta name="robot" content="all">
+<meta name="language" content="dutch">
+<meta name="autor" content="Julian Bos">
+<meta name="copyright" content="copyright">
+<link rel="stylesheet" href="styles/#" type="text/css"> 
+</head>
+	<body>
+		<h3>lab 07</h3>
+		<h3></h3>
+		<script>
+			
+			doorgaan = confirm('welkom');
+			
+			if(doorgaan == false){
+				alert('Tot ziens!');
+			}
+			
+			if(doorgaan == true) 
+				woonplaats = prompt('wat is uw woonplaats?');
+				
+			if (doorgaan == true) 
+				postcode = prompt('wat is uw postcode?');
+					
+				var extraPayment = 0;
+				if(woonplaats == 'Amsterdam' && postcode >= "1000AA" && postcode <= "2000BB"){ 
+					alert('u betaalt geen bezorg kosten.');
+				 }else {
+					extraPayment = 15;
+					alert('u moet betalen plus bezorg kosten') 
+				}
+				
+			
+			
+	
+			var klantnaam = prompt("Voer je eigen naam in");
+			var aantal =
+			parseInt(prompt("aantal boeken te bestellen?"));
+			var titel = "Javascript"
+			var prijs= 30;
+			var bedrag= aantal * prijs;
+			var btw = 0.06;
+			var totaal = bedrag * btw;
+			var vandaag = new Date();
+				mm = vandaag.getMonth()+1;
+				dd = vandaag.getDate();
+				jjjj = vandaag.getFullYear();
+				
+			document.write("Factuurdatum:" + dd + '-' + mm + '-' + jjjj + "<br/>");
+			var bezorgkosten = 15;
+						
+			var dag = 86400000;
+				betaaldatum = vandaag.getTime() + (dag * 5);
+				betaaldatum = new Date(betaaldatum);
+				mm = betaaldatum.getMonth()+1;
+				dd = betaaldatum.getDate();
+				jjjj = betaaldatum.getFullYear();
+				
+			
+			document.write("Betaaldatum:" + dd + '-' + mm + '-' + jjjj + "<br/>");
+			document.write("<br>Bedankt voor je bestelling: " + klantnaam);
+			document.write("<br>woonplaats: " + woonplaats);
+			document.write("<br>postcode: "+ postcode);
+			document.write("<br>Boektitel is: " + titel);
+			document.write("<br>aantal te bestellen: " + aantal);
+			document.write("<br>prijs per boek is: " + prijs.toFixed(2));
+			document.write("<br>Bedrag is: " + bedrag);
+			document.write("<br>BTW is: " + bedrag * btw);
+			document.write("<br>totaal is: " + bedrag * 1.06);
+			document.write("<br> bezorg kosten indien nodig: "+ 15);
+			document.write("<br>totaal met bezorgkosten is: " + ((bedrag  * 1.06) + extraPayment)); 
+			
+		</script>
+	</body>
+	
+			
+</html>

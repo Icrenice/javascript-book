@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8">
+<meta name="robots" content="all">
+<meta name="language" content="Dutch">
+<meta name="author" content="Julian">
+<meta name="description" content="">
+<meta name="keywords" content="">
+<meta name="copyright" content="copyright">
+<title>dom-events</title>
+<script src="dom-events.js"></script>
+<script>
+document.write('<form name="klok"> ' + '<input type="text" ' + 
+'name="display" '+ 'size="8" ' +
+'style="background-color: #30CE28; font-size: 44px" > ' +  ' </form>');
+var nu = new Date();
+var uur = nu.getHours();
+var min = nu.getMinutes();
+var sec = nu.getSeconds();
+
+var alterneren = 0;
+function showklok() {
+min=((min < 10) ? '0': '') + min;
+if(alterneren) {
+document.klok.display.value=uur + ':' + min + ':' + sec;
+alterneren = 0;
+}
+else {
+document.klok.display.value=uur + ':' + min + ':' + sec;
+alterneren = 1;
+}
+nu = new Date(); uur = nu.getHours(); min = nu.getMinutes(); sec = nu.getSeconds();
+setTimeout('showklok()',1000);
+}
+
+//globale variabelen
+var afbeeldingen = new Array('Galaxy-s4.png','ipad.jpg','laptop.jpg');
+var max = afbeeldingen.length;
+var randomIndex=0;
+function showMedia(){
+	randomIndex = math.floor((Math.random() * max));
+	document.getElementById('media').src = afbeeldingen[randomIndex];
+	}
+ 
+function formcheck(thisForm) {
+	postcode = thisForm.postcode.value;
+	for(var i=0; i < postcode.length; i++) {
+		var c = postcode.charAt(i);
+		if(c == ' '){ 
+			alert("postcode mag geen spaties hebben!");
+			thisForm.postcode.focus();
+			return false;
+		}
+	}
+}
+function formcheck(thisForm) {
+	leeftijd = thisForm.leeftijd.value;
+	for(var i=20; i > leeftijd.length; i++) {
+		if(leeftijd < 20){ 
+			alert("u bent te jong");
+			thisForm.leeftijd.focus();
+			return false;
+		}
+	}
+}
+function herhalen(){
+	document.custform.wachtwoord2.value = document.custform.password.value;
+}
+    
+
+</script>
+</head>
+<body onload="showklok();">
+
+	<div>
+	<a href="javascript: showmedia();">
+
+	
+	<img src="ipad.jpg" id="media"  height="150" width="150"
+		onmouseover="this.width=this.width*1.5"
+		onmouseout="this.width=this.width/1.5"></a>
+		
+	</div>
+	
+	<div>
+	 	
+	<form action="mailto: email@adres.nl"
+			name="custform"
+		method="post"
+	onsubmit="return(formcheck(this));">
+	
+			
+	
+	<form action="#"> <label for="man">Man: </label>
+		<input type="radio" name="geslacht" id="man" value="M" 
+			onchange="
+				if(this.checked == true) {
+				alert('welkom meneer');
+			}">
+	<label for="vrouw">Vrouw: </label>		
+		<input type="radio" name="geslacht" id="vrouw" value="V"
+			onchange="
+				if( this.checked == true) {
+				alert('welkom mevrouw');
+			};">
+			</br>
+	<input type="text" name="fname" placeholder="vul voornaam in:"><br>
+	<input type="text" name="lname" placeholder="vul voornaam in:"><br>
+	<input type="text" onchange="if(parseInt(this.value) <=17) {alert('je bent leerplichtig!');}
+	if(parseInt(this.value) >=55) {alert('kijk naar ons seniorenprogramma!');}"
+	name="leeftijd" placeholder="vul leeftijd in:"><br>
+	<input type="text" name="postcode" placeholder="vul uw postcode in:"><br>
+	<input type="text" name="email" placeholder="vul uw email in:"><br>
+	<input type="text" name="tel" placeholder="vul uw 06 in:"><br>
+	<input required type="password" id="password"
+	placeholder="vul uw wachtwoord in" onkeyup="herhalen()"><br>
+	
+	<input type="password" name="wachtwoord2" placeholder="vul uw wachtword nogmaals in:"><br>
+	
+	</div>
+	
+	
+	<div>
+	bestellingen</br>
+	
+	Smartphone:<input type="checkbox" name="gadget" id="smartphone" value="S" 
+	onchange="
+			if(document.custform.gadget[0].checked)
+			{	
+				alert('smartphone besteld!');
+			}"
+		><br>
+	Laptop:<input type="checkbox" name="gadget" id="laptop" value="L" 
+	onchange="
+			if(document.custform.gadget[1].checked)
+			{	
+				alert('laptop besteld!');
+			}"
+		><br>
+	Tablet:<input type="checkbox" name="gadget" id="tablet" value="T" 
+	onchange="
+			if(document.custform.gadget[2].checked)
+			{	
+				alert('tablet besteld!');
+			}"
+		><br>
+		
+	
+	<select onchange="
+		if(document.custform.bezorgingen.value == 'express') {
+			getElementById('expres-info').style.display='block';
+			getElementById('dag-info').style.display='none';
+			getElementById('week-info).style.display='none';
+	}"
+	name="bezorging">                                        
+	
+	<option value="expres">expres</option>
+	<option value="dag">dag</option>
+	<option value="week">week</option>
+	
+	</select> <br>
+	
+	<input type="submit" id="submit" name="submit" value="Verzenden"
+	onmouseover="style.color='green'"
+	onmouseout="style.color='black'">	
+	</div>
+
+	
+	
+</form>
+	
+	<br>
+	<div id="expres-info" style="display:none">express bestelling</div>
+	<div id="dag-info" style="display:none">Dagbestelling</div>
+	<div id="week-info" style="display:none">Week bestelling</div>
+	<br>
+	
+	
+	
+</body>
+</html>

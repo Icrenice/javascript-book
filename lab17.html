@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8">
+<meta name="robots" content="all">
+<meta name="language" content="Dutch">
+<meta name="author" content="Julian">
+<meta name="description" content="">
+<meta name="keywords" content="">
+<meta name="copyright" content="copyright">
+<title>lab17</title>
+
+	<script>
+		var steden = new Array("amsterdam","barcelona","london","parijs","berlijn","antwerpen","rome","madrid");
+	
+		var randomstad = steden[Math.floor(Math.random()*steden.length)];
+		var masker = "?????????";
+		
+		var geraden = false;
+		
+		while(geraden==false)
+		{
+			var raden = prompt("Raad de stad. Gok 1. Hint: " + masker );
+			
+			if(randomstad==raden)
+			{
+				alert("Je hebt het woord geraden");
+				geraden=true;
+			}
+
+			//function vergelijk raden met randomstad en geef nieuw masker
+			
+		}
+		
+		
+	</script> 
+</body>
+</html>

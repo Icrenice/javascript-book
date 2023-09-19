@@ -1,0 +1,171 @@
+<!doctype html>
+<html lang="nl">
+    <head>
+        <meta charset="UTF-8">
+        <style>
+            #box {
+                width: 390px;
+                height: 500px;
+                border: solid black;
+            }
+            .cirkel {
+                border-radius: 50%;
+                width: 50px;
+                height: 50px;
+                background-color: red;
+                position: relative;
+                top: 50px;
+                left: 100px;
+            }
+            #rij2{
+                margin-top: -500px;
+            }
+        </style>
+    </head>
+    <body>    
+        <div id= "box">
+                <div id= "1" class="cirkel">
+                </div>
+                <div id= "2" class="cirkel">
+                </div>
+                <div id= "3" class="cirkel">
+                </div>
+                <div id= "4" class="cirkel">
+                </div>
+                <div id= "5" class="cirkel">
+                </div>
+                <div id= "6" class="cirkel">
+                </div>
+                <div id= "7" class="cirkel">
+                </div>
+                <div id= "8" class="cirkel">
+                </div>
+                <div id= "9" class="cirkel">
+                </div>
+                <div id= "10" class="cirkel">
+                </div>
+
+            </div>
+            <div id="rij2">
+                    <div id= "11" class="cirkel">
+                        </div>
+                        <div id= "12" class="cirkel">
+                        </div>
+                        <div id= "13" class="cirkel">
+                        </div>
+                        <div id= "14" class="cirkel">
+                        </div>
+                        <div id= "15" class="cirkel">
+                        </div>
+                        <div id= "16" class="cirkel">
+                        </div>
+                        <div id= "17" class="cirkel">
+                        </div>
+                        <div id= "18" class="cirkel">
+                        </div>
+                        <div id= "19" class="cirkel">
+                        </div>
+                        <div id= "20" class="cirkel">
+                        </div>
+            </div>
+
+
+        <script>
+            var Bal = function(id,color,width,height) {
+                var right = true;
+                var down = true;
+                this.element = document.getElementById(id);
+                this.element.style.width = width;
+                this.element.style.height = height;
+                this.element.style.backgroundColor = color;
+                this.getX = function(){
+                    this.x = this.element.style.left;
+                    return (this.x.substring(0, this.x.length -2));
+                };
+                this.getY = function(){
+                    this.y = this.element.style.top;
+                    return (this.y.substring(0, this.y.length -2));
+                };
+                this.setX = function(pos){
+                    this.element.style.left = pos + 'px';
+                };
+                this.setY = function(pos){
+                    this.element.style.top = pos + 'px';
+                };
+            }
+
+            var playIt = function(obj){
+                var xx = obj.getX();
+                console.log(xx);
+                if(obj.right){
+                    xx++;
+                    if(xx >= 350) obj.right = false
+                }
+                if(!obj.right){
+                    xx--;
+                    if(xx <= 0) obj.right = true;
+                }
+                obj.setX(xx);
+
+                var yy = obj.getY();
+                console.log(yy);
+                if(obj.down){
+                    yy++;
+                    if(yy >= 150) obj.down = false;
+                }
+                if(!obj.down){
+                    yy--;
+                    if(yy <= 0) obj.down = true;
+                }
+                obj.setY(yy);
+            };
+            
+            bal1 = new Bal('1','red','35px','35px');
+            bal2 = new Bal('2','blue','35px','35px');
+            bal3 = new Bal('3','green','35px','35px');
+            bal4 = new Bal('4','grey','35px','35px');
+            bal5 = new Bal('5','yellow','35px','35px');
+            bal6 = new Bal('6','orange','35px','35px');
+            bal7 = new Bal('7','purple','35px','35px');
+            bal8 = new Bal('8','black','35px','35px');
+            bal9 = new Bal('9','lila','35px','35px');
+            bal10 = new Bal('10','pink','35px','35px');
+
+            bal11 = new Bal('11','red','35px','35px');
+            bal12 = new Bal('12','blue','35px','35px');
+            bal13 = new Bal('13','green','35px','35px');
+            bal14 = new Bal('14','grey','35px','35px');
+            bal15 = new Bal('15','yellow','35px','35px');
+            bal16 = new Bal('16','orange','35px','35px');
+            bal17 = new Bal('17','purple','35px','35px');
+            bal18 = new Bal('18','black','35px','35px');
+            bal19 = new Bal('19','lila','35px','35px');
+            bal20 = new Bal('20','pink','35px','35px');
+            
+
+            setInterval( 'playIt(bal1)',1);
+            setInterval( 'playIt(bal2)',2);
+            setInterval( 'playIt(bal3)',3); 
+            setInterval( 'playIt(bal4)',4);
+            setInterval( 'playIt(bal5)',5);
+            setInterval( 'playIt(bal6)',6);
+            setInterval( 'playIt(bal7)',7);
+            setInterval( 'playIt(bal8)',8);
+            setInterval( 'playIt(bal9)',9);
+            setInterval( 'playIt(bal10)',10);
+
+            setInterval( 'playIt(bal11)',10);
+            setInterval( 'playIt(bal12)',9);
+            setInterval( 'playIt(bal13)',8); 
+            setInterval( 'playIt(bal14)',7);
+            setInterval( 'playIt(bal15)',6);
+            setInterval( 'playIt(bal16)',5);
+            setInterval( 'playIt(bal17)',4);
+            setInterval( 'playIt(bal18)',3);
+            setInterval( 'playIt(bal19)',2);
+            setInterval( 'playIt(bal20)',1);    
+
+        
+        </script>
+    </body>
+</html>

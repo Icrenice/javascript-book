@@ -1,0 +1,47 @@
+<!DOCKTYPE html>
+<html lang="nl">
+    <head>
+        <meta charet="UTF-8">
+    <style>
+        #box{
+            width: 400px;
+            height: 200px;
+            border: solid black;
+        }
+        .cirkel{
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            background-color: red;
+            position: relative;
+            top: 50px;
+            left: 100px;
+        }    
+    </style>
+    </head>
+    <body>
+        <div id="box">
+            <div id="1" class="cirkel">
+        </div>
+    </div>
+    <script>
+        obj = {
+            kleur:"red",
+            cirkel: document.getElementById('1')
+        };
+        var horizontaal = function(posX){
+            this.cirkel.style.left = posX+'px';
+        };
+        var verticaal = function(posY){
+            this.cirkel.style.top = posY+'px';
+        };
+        
+        /// Call
+        horizontaal.call(obj,300);
+        verticaal.call(obj,100);    
+    </script>
+
+
+
+</body>
+</html>

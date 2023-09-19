@@ -1,0 +1,28 @@
+<script>
+    function grootvader(){
+        familieNaam = 'Mandela';
+        var naam = 'grootvader';
+        var leeftijd = 66;
+        console.log(naam+' ' + familieNaam+ ' is ' +leeftijd);
+
+        function vader(){
+            ogen= 'bruine';
+            var naam = 'vader';
+            var leeftijd= 36;
+            console.log(naam+  ' '+familieNaam+ ' is '+leeftijd);
+
+        function kind(){
+            var naam = 'kind';
+            var leeftijd= 16;
+            console.log(naam+ ' '+ familieNaam+ ' is '+leeftijd + ' en heeft ' + ogen + ' ogen ');
+        }
+        kind();
+        window.kind = kind;
+    }
+        vader();
+    }
+    grootvader();
+    kind();
+
+
+</script> 

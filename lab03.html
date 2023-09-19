@@ -1,0 +1,36 @@
+<!DOCKTYPE html>
+<html lang="nl">
+	<head> 
+		<meta charset="utf-8">
+		<title>lab03</title>
+		<!-- dit script wekrt met variabelen
+		auteur: Julian Bos
+		datum: 13-11-2018
+		-->
+	</head>
+	<body>
+		<script>
+		var testArray = new Array('een','twee','3','vier','5');
+		var test = 10;
+		var undefined
+	
+		document.write('<br>lab03: testArray: ' +testArray);
+		document.write("<br>datatype: " +typeof test);
+		testArray.pop();
+		document.write('<br> ' +testArray);
+		testArray.unshift('nul');
+		document.write('<br> ' +testArray)
+		document.write('<br>Datatype: [0]is: ' +typeof undefined);
+	    testArray.shift('nul')
+		document.write('<br> ' +testArray);
+		
+		index = testArray.indexOf("twee");
+		testArray.splice(index,1);
+		document.write('<br> ' +testArray);
+		index = testArray.indexOf("vier");
+		testArray.splice(index,1);
+		document.write('<br> ' +testArray);
+		
+		</script>
+	</body>
+</html>
